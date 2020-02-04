@@ -7,7 +7,6 @@ anwlist=[]
 def stack(temp, t):
     for i in range(3):
         if t in temp[i]:
-            
             print(temp)
             tmp = temp[0]+temp[1]
             max_n = max(tmp)
