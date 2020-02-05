@@ -1,40 +1,39 @@
 nlen=int(input())
 nlist=list(map(int, input().split()))
-temp=[]
+temp=[nlist[i]-nlist[i+1] for i in range(nlen-1)]
+ptemp=[0]*len(temp)
+mtemp=[0]*len(temp)
 
-for i in range(nlen-1):
-    temp.append(nlist[i]-nlist[i+1])
+#증가 =1세기
+for k in range(len(temp)):
+    if temp[k]<=0:
+        ptemp[k]=1
+#감소 =1세기
+for k in range(len(temp)):
+    if temp[k]>=0:
+        mtemp[k]=1
 
-lenlist=[]
-if nlen==1:
-    print(1)
-else:
-    while sum(lenlist)<=len(nlist):
-        i=0
-        if temp[i]<=0:
-            for n in range(len(temp)):
-                if temp[n]>0:
-                    temp=temp[i:]
-                    lenlist.append(i)
-                    break
-                else:
-                    i+=1
-                    lenlist.append(i)
+pcount=mcount=maxn=0
 
-        elif temp[i]>=0:
-            for n in range(len(temp)):
-                if temp[n]<0:
-                    temp=temp[i:]
-                    lenlist.append(i)
-                    break
-                else:
-                    i+=1
-                    lenlist.append(i)
-    print(max(lenlist)+1)
+#증가
+for i in range(len(temp)):
+    if ptemp[i]==1:
+        pcount+=1
+    else:
+        if pcount!=0 and pcount!=1:
+            if maxn<pcount:
+                maxn=pcount
+        pcount=0
 
-
-
-
-
-
-
+#감소
+for i in range(len(temp)):
+    if mtemp[i]==1:
+        mcount+=1
+        if maxn<mcount:
+            maxn=mcount
+    else:
+        if mcount!=0 and mcount!=1:
+            if maxn<mcount:
+                maxn=mcount
+        mcount=0
+print(maxn+1)
