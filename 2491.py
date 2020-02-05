@@ -31,10 +31,3 @@ else:
                     i+=1
                     lenlist.append(i)
     print(max(lenlist)+1)
-
-
-
-
-
-
-
