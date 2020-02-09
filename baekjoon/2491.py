@@ -26,7 +26,6 @@ for i in range(len(temp)):
             if maxn<pcount:
                 maxn=pcount
         pcount=0
-
 #감소
 for i in range(len(temp)):
     if mtemp[i]==1:
