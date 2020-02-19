@@ -3,7 +3,7 @@ import sys
 sys.stdin=open('input.txt', 'r')
 
 def match(bottom, top):
-    global N
+    global N, supermax
     if len(tlist[-1])==2:
         for x in range(N-1):
             summ+=max(dlist[x])
@@ -29,6 +29,7 @@ def match(bottom, top):
 
 dnum=int(input())
 dlist=[list(map(int, input().split())) for _ in range(dnum)]
+tlist=[[[k[0],k[5]], [k[1], k[3]], [k[2], k[4]]] for k in dlist]
 supermax=0
 
 for d in range(dnum):
@@ -41,4 +42,6 @@ for d in range(dnum):
         else:
             bottom=mlist[1]
             top=mlist[1]
+            match(bottom, top)
             
+print(supermax)
