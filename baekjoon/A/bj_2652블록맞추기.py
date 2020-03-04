@@ -8,11 +8,10 @@ def block(arr):
             if arr[y][x]==1:
                 sidx = x
                 while arr[y][x]==1:
-                    fidx=x
+                    fidx=x 
                     x+=1
                 if sidx==fidx
                 return sidx, fidx
-
 
 N = int(input())
 u,v,w,x,y = map(int, input().split())
