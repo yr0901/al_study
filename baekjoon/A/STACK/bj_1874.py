@@ -2,8 +2,12 @@
 n=int(input())
 anwlist=[int(input()) for _ in range(n)]
 tlist=list(range(2,n+1))
+stack=[1]
+i=j=0
+alist=['+']
 
-#추가 
+anw=True
+# test 해보자
 
 while j<len(anwlist):
     goal=anwlist[j]
