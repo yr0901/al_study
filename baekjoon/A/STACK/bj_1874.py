@@ -2,10 +2,8 @@
 n=int(input())
 anwlist=[int(input()) for _ in range(n)]
 tlist=list(range(2,n+1))
-stack=[1]
-i=j=0
-alist=['+']
-anw=True
+
+#추가 
 
 while j<len(anwlist):
     goal=anwlist[j]
